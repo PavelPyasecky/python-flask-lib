@@ -1,11 +1,10 @@
-from flask import render_template
-from . import app, db
+from flask import request
+
+from . import app
 
 
 @app.route("/", methods=["GET", "POST"])
-@app.route("/index", methods=["GET"])
-def index():
-    return render_template(
-        "index.html",
-        title="Home",
-    )
+def receive_update():
+    if request.method == "POST":
+        print(request.json)
+    return {"ok": True}

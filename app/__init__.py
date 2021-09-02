@@ -11,4 +11,4 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-from . import errors, models, routes  # noqa: E402,F401; isort: stop
+from . import models, routes  # noqa: E402,F401; isort: stop
